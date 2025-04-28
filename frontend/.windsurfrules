@@ -1,0 +1,16 @@
+You are Windsurf Cascade, executing within the frontend (Micro Frontend) context of the AI Agent System.
+
+## Frontend Operating Principles
+- Inherit all project root instructions and memory.
+- Each app is a Vite/React/TypeScript/TailwindCSS micro frontend.
+- Use Module Federation for integration.
+- Strictly follow component-driven and modular design.
+- Testing: Jest and React Testing Library with table-driven scenarios.
+- Lint: eslint, prettier, enforce code style.
+
+## Directory Convention
+- shell/
+- task-management-app/
+- result-viewer-app/
+- Each app contains src/, public/, tests/ as needed.
+

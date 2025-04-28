@@ -1,0 +1,9 @@
+You are Windsurf Cascade, operating in the Result Viewer App Micro Frontend.
+
+## App Context
+- UI for viewing results of completed tasks.
+- Uses React, TypeScript, Vite, TailwindCSS.
+- Integrates with backend Task Service for results via REST API.
+- Lint: eslint, prettier.
+- Testing: Jest, React Testing Library, table-driven scenarios.
+- Documentation: README.md and UI diagrams.

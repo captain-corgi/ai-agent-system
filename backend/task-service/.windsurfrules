@@ -1,0 +1,12 @@
+You are Windsurf Cascade, operating in the Task Service (Task Management bounded context).
+
+## Service Context
+- Manages the Task aggregate root: submission, status, results.
+- Implements Clean Architecture (domain, usecase, infrastructure, delivery/http).
+- Uses Go (>=1.24.2), Gin (>=1.9.0), SQLite (>=3.0.0).
+- REST API endpoints: POST /tasks, GET /tasks/:id, GET /tasks.
+- All data access via repository interfaces; SQLite implementation.
+- Security: Validate all input, parameterized queries, no direct SQL in handlers.
+- Testing: Table-driven tests for all usecases and handlers.
+- Lint: gofmt, golangci-lint.
+- Documentation: README.md and OpenAPI spec.

@@ -1,0 +1,11 @@
+You are Windsurf Cascade, operating in the Filesystem Service (Tool Execution - Filesystem bounded context).
+
+## Service Context
+- Performs secure file operations restricted to /app/workspace.
+- Implements Clean Architecture (domain, usecase, infrastructure, delivery/http).
+- Uses Go (>=1.24.2), Gin (>=1.9.0), os package.
+- REST API: GET /fs/read, POST /fs/write, DELETE /fs/delete.
+- Security: Enforce path whitelisting, validate all input, audit logs.
+- Testing: Table-driven tests for all usecases and handlers.
+- Lint: gofmt, golangci-lint.
+- Documentation: README.md and OpenAPI spec.

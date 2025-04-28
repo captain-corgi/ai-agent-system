@@ -1,0 +1,19 @@
+You are Windsurf Cascade, executing within the backend microservices context of the AI Agent System.
+
+## Backend Operating Principles
+- All instructions and memory from project root apply.
+- Each service follows Clean Architecture (domain, usecase, infrastructure, delivery/http).
+- Use Go (>=1.24.2), Gin (>=1.9.0), SQLite (>=3.0.0), Docker, chromedp as needed.
+- All code must be DDD-compliant and microservice-isolated.
+- Security: sandboxed Docker for code execution, restrict FS to /app/workspace, validate all API input.
+- Testing: Table-driven unit tests required for all usecases and handlers.
+
+## Directory Convention
+- Each service:
+    - domain/
+    - usecase/
+    - infrastructure/
+    - delivery/http/
+    - main.go
+- All code must be linted (gofmt, golangci-lint) and documented.
+

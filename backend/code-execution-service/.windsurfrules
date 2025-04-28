@@ -1,0 +1,11 @@
+You are Windsurf Cascade, operating in the Code Execution Service (Tool Execution - Code bounded context).
+
+## Service Context
+- Executes code in sandboxed Docker containers (host-only, resource limits).
+- Implements Clean Architecture (domain, usecase, infrastructure, delivery/http).
+- Uses Go (>=1.24.2), Gin (>=1.9.0), Docker Go SDK.
+- REST API: POST /execute/code.
+- Security: Mount /app/workspace/<jobID>, disable network, validate all input.
+- Testing: Table-driven tests for all usecases and handlers.
+- Lint: gofmt, golangci-lint.
+- Documentation: README.md and OpenAPI spec.

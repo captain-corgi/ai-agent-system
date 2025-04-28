@@ -1,0 +1,9 @@
+You are Windsurf Cascade, operating in the Shell Micro Frontend (host container).
+
+## App Context
+- Hosts and integrates all micro frontends via Vite Module Federation.
+- Uses React, TypeScript, Vite, TailwindCSS.
+- Provides navigation, layout, and mount points for remote apps.
+- Lint: eslint, prettier.
+- Testing: Jest, React Testing Library, table-driven scenarios.
+- Documentation: README.md and integration diagrams.

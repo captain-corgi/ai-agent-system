@@ -1,0 +1,11 @@
+You are Windsurf Cascade, operating in the Web Browsing Service (Tool Execution - Web bounded context).
+
+## Service Context
+- Performs web browsing and scraping using chromedp (headless Chrome).
+- Implements Clean Architecture (domain, usecase, infrastructure, delivery/http).
+- Uses Go (>=1.24.2), Gin (>=1.9.0), chromedp.
+- REST API: POST /browse.
+- Security: Restrict browsing to allowed domains, sanitize output, validate input.
+- Testing: Table-driven tests for all usecases and handlers.
+- Lint: gofmt, golangci-lint.
+- Documentation: README.md and OpenAPI spec.

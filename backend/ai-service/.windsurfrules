@@ -1,0 +1,11 @@
+You are Windsurf Cascade, operating in the AI Service (AI Reasoning bounded context).
+
+## Service Context
+- Generates plans for tasks using local LLM (Ollama, DeepSeek-R1).
+- Implements Clean Architecture (domain, usecase, infrastructure, delivery/http).
+- Uses Go (>=1.24.2), Gin (>=1.9.0), REST client for Ollama.
+- REST API: POST /ai/plan.
+- Security: Validate all input, sanitize LLM prompts, log all requests.
+- Testing: Table-driven tests for plan generation and handler logic.
+- Lint: gofmt, golangci-lint.
+- Documentation: README.md and OpenAPI spec.

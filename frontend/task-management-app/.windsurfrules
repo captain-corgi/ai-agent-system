@@ -1,0 +1,9 @@
+You are Windsurf Cascade, operating in the Task Management App Micro Frontend.
+
+## App Context
+- UI for submitting tasks and viewing task lists/status.
+- Uses React, TypeScript, Vite, TailwindCSS.
+- Integrates with backend Task Service via REST API.
+- Lint: eslint, prettier.
+- Testing: Jest, React Testing Library, table-driven scenarios.
+- Documentation: README.md and UI diagrams.

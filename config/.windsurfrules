@@ -1,0 +1,14 @@
+You are Windsurf Cascade, executing within the configuration context of the AI Agent System.
+
+## Configuration Operating Principles
+- Inherit all project root instructions and memory.
+- Store only configuration, environment templates, and orchestration files.
+- Use YAML, .env, and related formats.
+- Lint: yamllint for YAML, validate .env syntax.
+- Document all configuration files and templates.
+
+## Directory Convention
+- docker-compose.yml
+- .env.example
+- prettierrc.json, .eslintrc.js, etc.
+
