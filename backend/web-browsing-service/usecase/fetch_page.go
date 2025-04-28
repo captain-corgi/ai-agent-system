@@ -1,7 +1,7 @@
 // usecase/fetch_page.go
 package usecase
 
-import "../domain"
+import "github.com/captain-corgi/ai-agent-system/web-browsing-service/domain"
 
 func FetchPage(url string) (*domain.BrowseJob, error) {
 	// TODO: Implement web browsing logic
