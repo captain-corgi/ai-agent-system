@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: Web Browsing Service API
+  version: 1.0.0
+paths:
+  /browse:
+    post:
+      summary: Fetch and process a web page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+              required: [url]
+      responses:
+        '200':
+          description: Browsing result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /browse/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string

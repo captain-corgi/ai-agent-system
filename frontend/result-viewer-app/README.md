@@ -1,16 +1,86 @@
-# Result Viewer App Micro Frontend
+# Result Viewer App (Micro Frontend)
 
-This app provides the UI for viewing results of completed tasks.
+This app displays completed tasks and their results for the AI Agent System.
 
-- **Tech stack:** React, TypeScript, Vite, TailwindCSS
-- **Role:** Fetches and displays results from backend Task Service via REST API
-- **Features:** Result display, user-friendly formatting
+- **Tech stack:** React, Vite, TypeScript, TailwindCSS
+- **Role:** Displays task results and details
 
-## Structure
-- `src/` - Components
-- `public/` - Static assets
-- `tests/` - Jest and React Testing Library
+## Structure Diagram
+```mermaid
+graph TD
+  ResultUI[Result Viewer App]
+  ResultList[ResultList Component]
+  ResultDetail[ResultDetail Component]
+  ResultUI-->|shows|ResultList
+  ResultUI-->|shows|ResultDetail
+```
 
-## Lint & Test
-- Lint: eslint, prettier
-- Tests: Jest, RTL, table-driven scenarios
+## Features
+- List completed tasks
+- View detailed results
+- Filter and search results
+
+## Data Flow Diagram (DFD)
+```mermaid
+graph TD
+  User((User))-->|View Results|ResultList
+  ResultList-->|GET /tasks?status=done|Backend
+  User-->|Select Result|ResultDetail
+  ResultDetail-->|GET /tasks/:id|Backend
+```
+
+## Development
+```sh
+npm install
+npm run dev
+```
+
+## Usage
+- Access at http://localhost:5173/
+- View and search completed task results
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```

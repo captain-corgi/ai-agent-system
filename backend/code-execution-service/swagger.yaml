@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: Code Execution Service API
+  version: 1.0.0
+paths:
+  /execute/code:
+    post:
+      summary: Execute code in a sandbox
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                lang:
+                  type: string
+                  enum: [python, go, js]
+                code:
+                  type: string
+              required: [lang, code]
+      responses:
+        '200':
+          description: Execution result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  output:
+                    type: string
+                  exit_code:
+                    type: integer
+                  status:
+                    type: string
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+  /execute/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
